@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:layout_margin="5dp"
+    android:background="@drawable/rec_behind">
+    <ImageView
+        android:id="@+id/book_image"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        tools:src="@drawable/orange"
+        android:scaleType="centerCrop"
+        android:layout_marginRight="20dp"/>
+    <TextView
+        android:id="@+id/book_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/book_image"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        tools:text="Hi 미스터 갓"/>
+    <TextView
+        android:id="@+id/book_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/book_image"
+        android:layout_below="@id/book_title"
+        android:layout_marginTop="10dp"
+        android:ellipsize="end"
+        android:lines="3"
+        android:textSize="15dp"
+        tools:text="hi 미스터 갓은 일곱살 안나가 들려주는 인생 통찰에 관한 이야기이다 스무살 핀은 관한 이야기이다 스무살 핀 관한 이야기이다 스무살 핀 관한 이야기이다 스무살 핀"
+        />
+
+    <TextView
+        android:id="@+id/book_author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/book_image"
+        tools:text="[지은이]"
+        android:layout_marginBottom="10dp"
+        android:layout_alignBottom="@id/book_image"/>
+
+    <Button
+        android:id="@+id/book_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/book_image"
+        android:layout_alignParentRight="true"
+        android:text="추가하기"
+        />
+
+
+
+
+</RelativeLayout>

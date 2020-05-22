@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SoptSeminar3</string>
+
+    <string name="app_key">2b3e62442f7a2d2e16930c7063c6fa16</string>
+    <string name="api_key">2b3e62442f7a2d2e16930c7063c6fa16</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
