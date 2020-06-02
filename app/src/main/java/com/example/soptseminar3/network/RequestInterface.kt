@@ -6,6 +6,7 @@ import com.example.soptseminar3.data.RequestSignUp
 import com.example.soptseminar3.data.ResponseLogin
 import com.example.soptseminar3.data.ResponseSignUp
 import com.example.soptseminar3.kakaoBook.BookData
+import com.example.soptseminar3.kakaoBook.RequestBookData
 import com.example.soptseminar3.kakaoBook.ResponseBookData
 import retrofit2.Call
 import retrofit2.http.*
@@ -17,9 +18,10 @@ interface RequestInterface {
     @POST("/user/signup")
     fun requestSignup(@Body body: RequestSignUp) : Call<ResponseSignUp>
 
-    @Headers("Authorization: KakaoAK "+ R.string.app_key)
+    @Headers("Authorization: KakaoAK 9308cfd92a1e890f1569d69fecb4022d")
     @GET("/v3/search/book")
     fun requestSearchBook(
-        @Query("query")bookTitle:String
+        //@Header("Authorization: KakaoAK ")api :String,
+        @Query("query") query:String
     ):Call<ResponseBookData>
 }

@@ -12,6 +12,8 @@ import com.example.soptseminar3.customEnqueue
 import com.example.soptseminar3.network.RequestToServer
 import com.example.soptseminar3.showToast
 import kotlinx.android.synthetic.main.fragment_mypage.*
+import java.lang.Exception
+import java.net.URLEncoder
 
 /**
  * A simple [Fragment] subclass.
@@ -31,27 +33,50 @@ class Mypage : Fragment() {
 
         var data= mutableListOf<BookData>()
 
+
+        val adapter:BookAdapter= BookAdapter(context!!)
+
         val requestToServer=RequestToServer
         btn_search.setOnClickListener {
             val quest:String=edt_search.text.toString()
             requestToServer.k_service
                 .requestSearchBook(
-                    bookTitle = quest
+                    //R.string.api_key.toString(),
+                    quest
                 )
                 .customEnqueue(
                     onSuccess = {
-                        Log.d("book",it.documents?.title)
-                        if(it.documents!=null) {
-                            data.add(
-                                BookData(
-                                    imageurl = it.documents!!.image,
-                                    title=it.documents!!.title,
-                                    content=it.documents!!.contents,
-                                    author = it.documents!!.authors[0]
+
+                        if(it.documents!=null){
+                            Log.d("book","success")
+                            for(doc in it.documents!!){
+
+                                data.add(
+                                    BookData(
+                                        imageurl = doc.image,
+                                        title = doc.title,
+                                        content = doc.contents,
+                                        author = doc.authors[0]
+                                    )
+
                                 )
-                            )
+
+                            }
+                            adapter.notifyDataSetChanged()
+
 
                         }
+//                        if(it.documents!=null) {
+//                            data.add(
+//                                BookData(
+//                                    imageurl = it.documents!!.image,
+//                                    title=it.documents!!.title,
+//                                    content=it.documents!!.contents,
+//                                    author = it.documents!!.authors[0]
+//                                )
+//                            )
+//
+//                        }
 
 
                     }
@@ -63,9 +88,19 @@ class Mypage : Fragment() {
 
         }
 
-        val adapter:BookAdapter= BookAdapter(context!!)
         adapter.datas=data
         book_recyclerView.adapter=adapter
+    }
+
+    fun getURLDecode(content:String):String{
+        try{
+            return URLEncoder.encode(content,"utf-8")
+        }catch(e:Exception){
+
+            Log.d("cival","wae")
+
+        }
+        return " "
     }
 
 }

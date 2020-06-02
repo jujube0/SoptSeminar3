@@ -15,7 +15,7 @@ data class RequestBookData(
 )
 data class ResponseBookData(
     var meta:Meta?,
-    var documents:DocumentData?
+    var documents:Array<DocumentData>?
 )
 
 data class Meta(

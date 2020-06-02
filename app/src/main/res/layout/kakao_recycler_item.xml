@@ -3,14 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="200dp"
     android:padding="10dp"
     android:layout_margin="5dp"
     android:background="@drawable/rec_behind">
     <ImageView
         android:id="@+id/book_image"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
         tools:src="@drawable/orange"
         android:scaleType="centerCrop"
         android:layout_marginRight="20dp"/>
@@ -21,7 +21,7 @@
         android:layout_toRightOf="@id/book_image"
         android:textStyle="bold"
         android:textSize="20dp"
-        tools:text="Hi 미스터 갓"/>
+        tools:text="Hi 갓"/>
     <TextView
         android:id="@+id/book_content"
         android:layout_width="match_parent"
