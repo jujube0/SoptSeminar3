@@ -68,12 +68,13 @@ class Login : AppCompatActivity() {
         ).customEnqueue(
             onError = { showToast("올바르지 않은 요청입니다") },
             onSuccess = {
-                if (it.success) {
+                //if (it.success) {
                     Log.d("signon", it.success.toString())
+                    Log.d("signon", it.message.toString())
                     Toast.makeText(this@Login, "로그인 성공", Toast.LENGTH_SHORT).show()
                     storeData(id, pw)
                     finish()
-                }
+                //}
             }
         )
     }

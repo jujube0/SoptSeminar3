@@ -28,7 +28,7 @@ class Monday : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         webtAdapter= WebtAdapter(view.context)
         recy_monday.adapter=webtAdapter
-        recy_monday.addItemDecoration(WebtDeco())
+        //recy_monday.addItemDecoration(WebtDeco())
         loadDatas()
     }
 
